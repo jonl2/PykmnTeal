@@ -1,0 +1,12 @@
+z = 1
+while z == 1:
+    print('Please enter your method of search: by number or name.')
+    action = input(": ")
+    action = action.lower()
+    if action == 'number':
+        print('hon')
+        search = int(input(': '))
+        try:
+            search
+        except:
+            print('thats not a vaild number!')
