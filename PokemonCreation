@@ -1,0 +1,80 @@
+import random
+class Create_Pokemon(object):
+    Type = 'none'
+    def __init__(self,IV,exp,level,ID,Nat,EV):
+        self.name = name
+        self.attack = ((((2*base+IV[0]+(EV/4))*level)/100)+5)*Nat[0]
+        self.defense = ((((2*base+IV[1]+(EV/4))*level)/100)+5)*Nat[1]
+        self.spattack = ((((2*base+IV[2]+(EV/4))*level)/100)+5)*Nat[2]
+        self.spdef = ((((2*base+IV[3]+(EV/4))*level)/100)+5)*Nat[3]
+        self.speed = ((((2*base+IV[4]+(EV/4))*level)/100)+5)*Nat[4]
+        self.orHP = (((2*base+IV[5]+(EV/4))*level)/100)+level+10
+        self.exp = exp
+        self.level = level
+        self.ID = ID
+        self.orHP = HP
+    def Type(self): #this should be able to be simplified
+        firelist = []
+        waterlist = []
+        grasslist = []
+        rocklist = []
+        groundlist = []
+        ghostlist = []
+        phychiclist = []
+        electriclist = []
+        dragonlist = []
+        flyinglist = []
+        poisonlist = []
+        normallist = []
+        fightlist = []
+        icelist = []
+        buglist = []
+        darklist = []
+        if self.ID in firelist
+        elif self.ID in waterlist
+        elif self.ID in grasslist
+        elif self.ID in rocklist
+        elif self.ID in groundlist
+        elif self.ID in ghostlist
+        elif self.ID in psychiclist
+        elif self.ID in electriclist
+        elif self.ID in dragonlist
+        elif self.ID in flyinglist
+        elif self.ID in poisonlist
+        elif self.ID in normallist
+        elif self.ID in fightlist
+        elif self.ID in icelist
+        elif self.ID in buglist
+        elif self.ID in darklist
+        
+            
+
+    def levelup(self):
+        None
+    def evolup(self,ID):
+        None
+
+def IVcreate():
+    b = []
+    count = 0
+    while count < 6:
+        a = random.randint(0,31)
+        b.append(a)
+        count = count + 1
+    print(b)
+    return b
+def Natcreate():
+    a = 1
+    naturelist = ['Hardy','Lonely','Adamant','Naughty','Brave','Bold','Docile','Impish','Lax','Relaxed','Modest','Mild','Bashful',
+                  'Rash','Quiet','Calm','Gentle','Careful','Quirky','Sassy','Timid','Hasty','Jolly','Naive','Serious']
+    nat = naturelist[a]
+
+    nateffect = {1:('Hardy',(a,c),1.1,.9),2:('Lonely',(d,c),1.1,.9),}
+    c = nateffect[a][1]
+    print(c)
+
+
+    
+b =IVcreate()
+c = Natcreate()
+
