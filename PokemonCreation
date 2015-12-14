@@ -31,10 +31,15 @@ class Create_Pokemon(object):
         buglist = []
         darklist = []
         if self.ID in firelist
+            self.type = 'Fire'
         elif self.ID in waterlist
+            self.type = 'water'
         elif self.ID in grasslist
+            selt.type = 'grass'
         elif self.ID in rocklist
+        #etc...
         elif self.ID in groundlist
+        #etc...
         elif self.ID in ghostlist
         elif self.ID in psychiclist
         elif self.ID in electriclist
