@@ -1,8 +1,22 @@
 import random
-class Create_Pokemon(object):
+class create_pokemon(object):
     Type = 'none'
-    def __init__(self,IV,exp,level,ID,Nat,EV):
+    def __init__(self,name,base,IV,exp,level,ID,Nat,EV):
         self.name = name
+        self.attack = ((((2*(base[ID][1])+(IV[0])+(EV/4))*level)/100)+5)*(Nat[0])
+        self.defense = ((((2*base[ID][2]+IV[1]+(EV/4))*level)/100)+5)*Nat[1]
+        self.spattack = ((((2*base[ID][3]+IV[2]+(EV/4))*level)/100)+5)*Nat[2]
+        self.spdef = ((((2*base[ID][4]+IV[3]+(EV/4))*level)/100)+5)*Nat[3]
+        self.speed = ((((2*base[ID][5]+IV[4]+(EV/4))*level)/100)+5)*Nat[4]
+        self.orHP = (((2*base[ID][6]+IV[5]+(EV/4))*level)/100)+level+10
+        self.exp = exp
+        self.level = level
+        self.ID = ID
+        self.orHP = HP
+        self.Type = base[ID][9]
+        print(self.name,self.attack,self.defense,self.spattack,self.spdefense,self.speed,self.orHP,self.exp,self.level,self.ID,self.Type)
+
+    def levelup(self,base,EV,level):
         self.attack = ((((2*base+IV[0]+(EV/4))*level)/100)+5)*Nat[0]
         self.defense = ((((2*base+IV[1]+(EV/4))*level)/100)+5)*Nat[1]
         self.spattack = ((((2*base+IV[2]+(EV/4))*level)/100)+5)*Nat[2]
@@ -11,51 +25,7 @@ class Create_Pokemon(object):
         self.orHP = (((2*base+IV[5]+(EV/4))*level)/100)+level+10
         self.exp = exp
         self.level = level
-        self.ID = ID
-        self.orHP = HP
-    def Type(self): #this should be able to be simplified
-        firelist = []
-        waterlist = []
-        grasslist = []
-        rocklist = []
-        groundlist = []
-        ghostlist = []
-        phychiclist = []
-        electriclist = []
-        dragonlist = []
-        flyinglist = []
-        poisonlist = []
-        normallist = []
-        fightlist = []
-        icelist = []
-        buglist = []
-        darklist = []
-        if self.ID in firelist
-            self.type = 'Fire'
-        elif self.ID in waterlist
-            self.type = 'water'
-        elif self.ID in grasslist
-            selt.type = 'grass'
-        elif self.ID in rocklist
-        #etc...
-        elif self.ID in groundlist
-        #etc...
-        elif self.ID in ghostlist
-        elif self.ID in psychiclist
-        elif self.ID in electriclist
-        elif self.ID in dragonlist
-        elif self.ID in flyinglist
-        elif self.ID in poisonlist
-        elif self.ID in normallist
-        elif self.ID in fightlist
-        elif self.ID in icelist
-        elif self.ID in buglist
-        elif self.ID in darklist
-        
-            
-
-    def levelup(self):
-        None
+        self.ID = self.ID + 1
     def evolup(self,ID):
         None
 
@@ -74,12 +44,18 @@ def Natcreate():
                   'Rash','Quiet','Calm','Gentle','Careful','Quirky','Sassy','Timid','Hasty','Jolly','Naive','Serious']
     nat = naturelist[a]
 
-    nateffect = {1:('Hardy',(a,c),1.1,.9),2:('Lonely',(d,c),1.1,.9),}
+    nateffect = {1:('Hardy',(0,1),1.1,.9),2:('Lonely',(2,3),1.1,.9),3:('Adamant',(0,3),)}
     c = nateffect[a][1]
     print(c)
 
-
+#EV yield is (atk,def,spatk,spdef,spd,hp)
+#(ID#:(name,base stats,(EV yield),catch rate,type(s)))
+base = {1:('Bulbasaur',49,49,65,65,45,45,(0,0,1,0,0,0),45,('grass','poison')),
+             2:('Ivysaur',62,63,80,80,60,60,(0,0,1,1,0,0),45,('grass','poison')),
+             3:('Venasaur',82,83,100,100,80,80,(0,0,2,1,0,0),45,('grass','poison')),
+             4:(None)
+             }
     
 b =IVcreate()
 c = Natcreate()
-
+create_pokemon('Kiwi',base[1],b,0,5,1,c,0)
